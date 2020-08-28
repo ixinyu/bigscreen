@@ -1,0 +1,190 @@
+@import './reset.scss';
+$margin:5px;  //margin 边距基数
+$padding:5px; //padding 边距 基数
+$fontSize:2px;  //字体大小  基数
+$fontColor:#58BD9B;  //主要的字体颜色
+
+@mixin boxSizing {  //IE盒模型
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+@mixin moreLine($line:1) {  //多行文本省略号，存在兼容性  $line ：行数
+    display: -webkit-box;
+    display: -moz-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:$line;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+@mixin ellipsis{ //单行溢出显示省略号
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+@mixin gradient($direction:right,$c1:#ccc,$c2:#eee) { //渐变  $c1起始色，$c2结束色
+    background: -webkit-linear-gradient(
+        $direction,
+        $c1,
+        $c2
+    ); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(
+        $direction,
+        $c1,
+        $c2
+    ); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(
+        $direction,
+        $c1,
+        $c2
+    ); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to $direction,$c1, $c2); /* 标准的语法 */
+}
+@mixin boxShadow($shadows...) {  //阴影
+    -moz-box-shadow: $shadows;
+    -webkit-box-shadow: $shadows;
+    box-shadow: $shadows;
+}
+
+//弹性盒
+.flex {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+}
+.wrap{
+    @extend .flex;
+    flex-wrap: wrap
+}
+.nowrap{
+    @extend .flex;
+    flex-wrap: nowrap;
+}
+.column{
+    @extend .flex;
+    flex-direction: column;
+}
+.center{
+    @extend .flex;
+    align-items: center;
+    justify-content: center;
+}
+.a-center{
+  align-items: center;
+}
+.j-center{
+  justify-content: center;
+}
+.between{
+    justify-content: space-between;
+}
+.around{
+  justify-content: space-around;
+}
+.flexStart{
+    justify-content: flex-start;
+}
+.aiStart{
+  align-items: start;
+}
+
+//边距
+@for $i from 1 through 40{  //左边距
+    .ml#{$i*5}{
+        margin-left: $margin * $i;
+    }
+}
+
+@for $i from 1 through 40{ //右边距
+    .mr#{$i*5}{
+        margin-right: $margin * $i;
+    }
+}
+
+@for $i from 1 through 40{ //底边距
+    .mb#{$i*5}{
+        margin-bottom: $margin * $i;
+    }
+}
+
+@for $i from 1 through 40{ //上边距
+    .mt#{$i*5}{
+        margin-top: $margin * $i;
+    }
+}
+
+@for $i from 1 through 50{ //四个角相同边距
+  .m#{$i*2}{
+    margin: $margin * $i;
+  }
+}
+
+//padding 值
+@for $i from 1 through 40{  //左padding
+    .pl#{$i*5}{
+        padding-left: $padding * $i;
+    }
+}
+
+@for $i from 1 through 40{ //右padding
+    .pr#{$i*5}{
+      padding-right: $padding * $i;
+    }
+}
+
+@for $i from 1 through 40{ //底padding
+    .pb#{$i*5}{
+      padding-bottom: $padding * $i;
+    }
+}
+
+@for $i from 1 through 40{ //上padding
+    .pt#{$i*5}{
+      padding-top: $padding * $i;
+    }
+}
+@for $i from 1 through 50{ //四个角相同的内边距
+  .p#{$i*2}{
+    padding: $padding * $i;
+  }
+}
+
+//字体
+@for $i from 6 through 50{ //字体大小
+    .fs#{$i*2}{
+        font-size: $fontSize * $i;
+    }
+}
+
+
+// 主要字体颜色
+.c3{
+  color: #333;
+}
+.c6{
+  color: #666;
+}
+.c9{
+  color: #999;
+}
+.cf{
+  color: #fff;
+}
+.auto{
+  margin: 0 auto;
+}
+.textCenter{
+  text-align: center;
+}
+.themeColor{
+  color:$fontColor;
+}
+.bg{
+  background: #58BD9B;
+}
+.bold{
+  border-bottom: 1px solid #E7E7E7;
+}
+.c8c{
+  color: #8C8C8C;
+}

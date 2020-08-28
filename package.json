@@ -1,0 +1,57 @@
+{
+  "name": "sos",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.8.6",
+    "axios": "^0.19.2",
+    "core-js": "^3.6.5",
+    "echarts": "^4.8.0",
+    "ezuikit-js": "^0.1.1",
+    "js-cookie": "^2.2.1",
+    "leader-line-new": "^1.1.9",
+    "leader-line-vue": "^2.1.1",
+    "lib-flexible": "^0.3.2",
+    "node-sass": "^4.14.1",
+    "postcss-px2rem-exclude": "0.0.6",
+    "sass-loader": "^9.0.2",
+    "vant": "^2.9.4",
+    "vue": "^2.6.11",
+    "vue-router": "^3.3.4",
+    "vue-wechat-title": "^2.0.7"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.4.0",
+    "@vue/cli-plugin-eslint": "~4.4.0",
+    "@vue/cli-service": "~4.4.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "postcss-px-to-viewport": "^1.1.1",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
